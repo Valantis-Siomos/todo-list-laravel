@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>All Posts</title>
+  <title>All Tasks</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 p-8">
@@ -39,26 +39,26 @@
   </style>
 @endif
 
-  <h1 class="text-4xl font-bold mb-6 text-center text-gray-800">All Posts</h1>
+  <h1 class="text-4xl font-bold mb-6 text-center text-gray-800">All Tasks</h1>
 
   <div class="mb-6 text-center">
-    <a href="{{ route('posts.create') }}"
+    <a href="{{ route('tasks.create') }}"
        class="inline-block bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition">
-      Create New Post
+      Create New Task
     </a>
   </div>
 
   <div class="max-w-3xl mx-auto">
-    @foreach($posts as $post)
+    @foreach($tasks as $task)
       <div class="bg-white rounded shadow p-6 mb-4">
-        <h2 class="text-2xl font-semibold text-gray-900 mb-2">{{ $post->title }}</h2>
-        <p class="text-gray-700">{{ $post->content }}</p>
+        <h2 class="text-2xl font-semibold text-gray-900 mb-2">{{ $task->title }}</h2>
+        <p class="text-gray-700">{{ $task->content }}</p>
 
         <div class="mt-4 flex space-x-2">
           <!-- Edit button -->
-          <a href="{{ route('posts.edit', $post->id) }}"
+          <a href="{{ route('tasks.edit', $task->id) }}"
              class="inline-flex items-center bg-yellow-500 text-white px-3 py-1 rounded hover:bg-yellow-600 transition"
-   title="Edit Post">
+   title="Edit Task">
     <!-- Pencil Icon SVG -->
     <svg xmlns="http://www.w3.org/2000/svg" fill="none"
          viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
@@ -69,7 +69,7 @@
           </a>
 
           <!-- Delete button -->
-          <form action="{{ route('posts.destroy', $post->id) }}" method="POST">
+          <form action="{{ route('tasks.destroy', $task->id) }}" method="POST">
             @csrf
             @method('DELETE')
             <button type="submit"
