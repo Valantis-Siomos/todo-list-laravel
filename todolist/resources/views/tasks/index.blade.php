@@ -52,7 +52,7 @@
     @foreach($tasks as $task)
       <div class="bg-white rounded shadow p-6 mb-4">
         <h2 class="text-2xl font-semibold text-gray-900 mb-2">{{ $task->title }}</h2>
-        <p class="text-gray-700">{{ $task->content }}</p>
+        <p class="text-gray-700">{{ $task->description }}</p>
 
         <div class="mt-4 flex space-x-2">
           <!-- Edit button -->
