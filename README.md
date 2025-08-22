@@ -7,8 +7,7 @@ foto here
 
 ## Futures:
 
--**
--**
+
 -**Authentication System (login/register users).
 -**Posts Management
   -**Users can create, edit, and delete their own posts.
