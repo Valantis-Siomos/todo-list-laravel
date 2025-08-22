@@ -3,7 +3,22 @@
 This project is a Laravel-based application built for learning and experimenting with core Laravel features such as authentication, 
 CRUD operations, routing, and Blade templating. It also includes fun additions like a chat room and a weather checker.
 
+
 foto here
+
+# This project is created in 2 deferent inviroments
+
+- macOs
+ - Visual Studio Code
+ - PHP Apache with Brew
+ - Sequel Ace
+ - mariadb
+- Windows
+  - Visual Studio Code
+  - Herd
+  - DBngin
+  - TablePlus
+  - mariadb
 
 ## Futures:
 
@@ -22,4 +37,11 @@ foto here
 - Admin Dashboard
   - View total number of posts.
   - Breakdown of posts by user.
+  - 
+## Tech Stack
 
+- Backend: Laravel 11
+- Frontend: Blade , Tailwind CSS
+- Database: MySQL / MariaDB
+- Authentication: Laravel’s built-in Auth
+- API Integration: OpenWeather API (for weather page)
