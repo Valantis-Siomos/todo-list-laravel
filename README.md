@@ -9,11 +9,11 @@ foto here
 # Inviroments
 
 - macOs
- - Visual Studio Code
- - PHP Apache with Brew
- - Sequel Ace
- - mariadb
- #
+  - Visual Studio Code
+  - PHP Apache with Brew
+  - Sequel Ace
+  - mariadb
+ 
 - Windows
   - Visual Studio Code
   - Herd
