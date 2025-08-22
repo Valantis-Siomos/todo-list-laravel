@@ -7,7 +7,7 @@ CRUD operations, routing, and Blade templating. It also includes fun additions l
 foto here
 
 # Inviroments
-This project is created in wo different environments:
+This project is created in two different environments:
 
 - macOs
   - Visual Studio Code
