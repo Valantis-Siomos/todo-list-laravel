@@ -10,7 +10,7 @@ foto here
 
 - macOs
   - Visual Studio Code
-  - PHP Apache with Brew
+  - PHP Apache with HomeBrew
   - Sequel Ace
   - mariadb
  
