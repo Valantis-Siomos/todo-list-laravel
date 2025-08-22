@@ -13,7 +13,7 @@ foto here
  - PHP Apache with Brew
  - Sequel Ace
  - mariadb
- 
+ #
 - Windows
   - Visual Studio Code
   - Herd
