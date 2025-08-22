@@ -9,7 +9,7 @@ foto here
 
 
 - **Authentication System (login/register users).
-- **Posts Management
+- Posts Management
   - **Users can create, edit, and delete their own posts.
   - **Admin can view and manage all posts.
   - **Normal users can view their own posts plus admin posts.
