@@ -6,13 +6,14 @@ CRUD operations, routing, and Blade templating. It also includes fun additions l
 
 foto here
 
-# This project is created in 2 deferent inviroments
+# Inviroments
 
 - macOs
  - Visual Studio Code
  - PHP Apache with Brew
  - Sequel Ace
  - mariadb
+ 
 - Windows
   - Visual Studio Code
   - Herd
