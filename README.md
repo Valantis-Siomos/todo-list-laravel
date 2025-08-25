@@ -4,9 +4,10 @@ This project is a Laravel-based application built for learning and experimenting
 CRUD operations, routing, and Blade templating. It also includes fun additions like a chat room, custom modals and a weather checker.
 
 
-foto here
+![admin](/todolist/assets/admin.png)
 
 # Inviroments
+
 This project is created in two different environments:
 
 - macOs
@@ -22,8 +23,16 @@ This project is created in two different environments:
   - TablePlus
   - mariadb
 
-## Futures:
+# Tech Stack
 
+- Backend: Laravel 11
+- Frontend: Blade, Tailwind CSS
+- Database: MySQL / MariaDB
+- Authentication: Laravel’s built-in Auth
+- API Integration: OpenWeather API
+
+
+## Futures:
 
 - Authentication System (login/register users).
 - Posts Management
