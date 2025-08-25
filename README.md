@@ -59,36 +59,35 @@ This project is created in two different environments:
 
 - 4 . Database setup.
 
-  CREATE TABLE `users` (
-  `id` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-  `name` VARCHAR(255) NOT NULL,
-  `email` VARCHAR(255) UNIQUE NOT NULL,
-  `password` VARCHAR(255) NOT NULL,
-  `is_admin` TINYINT(1) DEFAULT 0,
-  `created_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+#### Users
+| Column     | Type          | Constraints                                         |
+|------------|--------------|-----------------------------------------------------|
+| id         | INT UNSIGNED | AUTO_INCREMENT PRIMARY KEY                          |
+| name       | VARCHAR(255) | NOT NULL                                            |
+| email      | VARCHAR(255) | UNIQUE NOT NULL                                     |
+| password   | VARCHAR(255) | NOT NULL                                            |
+| is_admin   | TINYINT(1)   | DEFAULT 0                                           |
+| created_at | TIMESTAMP    | DEFAULT CURRENT_TIMESTAMP                           |
+| updated_at | TIMESTAMP    | DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP |
 
+#### Posts
+| Column     | Type          | Constraints                                         |
+|------------|--------------|-----------------------------------------------------|
+| id         | INT UNSIGNED | AUTO_INCREMENT PRIMARY KEY                          |
+| title      | VARCHAR(255) | NOT NULL                                            |
+| content    | TEXT         | NOT NULL                                            |
+| user_id    | INT UNSIGNED | FOREIGN KEY → users(id) ON DELETE CASCADE           |
+| created_at | TIMESTAMP    | DEFAULT CURRENT_TIMESTAMP                           |
+| updated_at | TIMESTAMP    | DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP |
 
-CREATE TABLE `posts` (
-  `id` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-  `title` VARCHAR(255) NOT NULL,
-  `content` TEXT NOT NULL,
-  `user_id` INT UNSIGNED NOT NULL,
-  `created_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  FOREIGN KEY (`user_id`) REFERENCES `users`(`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
-
-CREATE TABLE `messages` (
-  `id` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-  `user_id` INT UNSIGNED NOT NULL,
-  `content` TEXT NOT NULL,
-  `created_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  FOREIGN KEY (`user_id`) REFERENCES `users`(`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+#### Messages
+| Column     | Type          | Constraints                                         |
+|------------|--------------|-----------------------------------------------------|
+| id         | INT UNSIGNED | AUTO_INCREMENT PRIMARY KEY                          |
+| user_id    | INT UNSIGNED | FOREIGN KEY → users(id) ON DELETE CASCADE           |
+| content    | TEXT         | NOT NULL                                            |
+| created_at | TIMESTAMP    | DEFAULT CURRENT_TIMESTAMP                           |
+| updated_at | TIMESTAMP    | DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP |
 
 # Screenshots
 
