@@ -11,26 +11,17 @@ CRUD operations, routing, and Blade templating. It also includes fun additions l
 This project is created in two different environments:
 
 - macOs
-  - Visual Studio Code
-  - PHP Apache with HomeBrew
-  - Sequel Ace
-  - mariadb
+  - Visual Studio Code.
+  - PHP Apache with HomeBrew.
+  - Sequel Ace.
+  - mariadb.
  
 - Windows
-  - Visual Studio Code
-  - Herd
-  - DBngin
-  - TablePlus
-  - mariadb
-
-# Tech Stack
-
-- Backend: Laravel 11
-- Frontend: Blade, Tailwind CSS
-- Database: MySQL / MariaDB
-- Authentication: Laravel’s built-in Auth
-- API Integration: OpenWeather API
-
+  - Visual Studio Code.
+  - Herd.
+  - DBngin.
+  - TablePlus.
+  - mariadb.
 
 ## Futures:
 
@@ -51,8 +42,69 @@ This project is created in two different environments:
   - 
 ## Tech Stack
 
-- Backend: Laravel 11
-- Frontend: Blade , Tailwind CSS
-- Database: MySQL / MariaDB
-- Authentication: Laravel’s built-in Auth
-- API Integration: OpenWeather API (for weather page)
+- Backend: Laravel 11.
+- Frontend: Blade , Tailwind CSS.
+- Database: MySQL / MariaDB.
+- Authentication: Laravel’s built-in Auth.
+- API Integration: OpenWeather API (for weather page).
+
+# Installation
+- 1 . Clone the repository.
+
+- 2 . Install dependencies.
+  - composer install
+  - npm install
+
+- 3 . Setup enviroment.
+
+- 4 . Database setup.
+
+  CREATE TABLE `users` (
+  `id` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  `name` VARCHAR(255) NOT NULL,
+  `email` VARCHAR(255) UNIQUE NOT NULL,
+  `password` VARCHAR(255) NOT NULL,
+  `is_admin` TINYINT(1) DEFAULT 0,
+  `created_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+CREATE TABLE `posts` (
+  `id` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  `title` VARCHAR(255) NOT NULL,
+  `content` TEXT NOT NULL,
+  `user_id` INT UNSIGNED NOT NULL,
+  `created_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  FOREIGN KEY (`user_id`) REFERENCES `users`(`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+CREATE TABLE `messages` (
+  `id` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  `user_id` INT UNSIGNED NOT NULL,
+  `content` TEXT NOT NULL,
+  `created_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  FOREIGN KEY (`user_id`) REFERENCES `users`(`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+# Screenshots
+
+- Login page.
+![login](/todolist/assets/login.png)
+- Post index.
+![admin](/todolist/assets/admin.png)
+- Chat.
+![chat](/todolist/assets/chat.png)
+- Weather page.
+![weather](/todolist/assets/weather.png)
+- Admin Dashboard.
+![dashboard](/todolist/assets/dashboard.png)
+
+- More screenshots in /todolist/assets/
+
+# Author 
+- Developed by Valantis Siomos.
+
